@@ -1,0 +1,26 @@
+html, body {
+	margin:0;
+	padding:0;
+	
+	background:yellow;
+}
+.grid {
+	margin:0;
+	padding:0;
+}
+.grid .grid_block {
+	width:300px;
+	height:auto;
+}
+
+
+
+.grid img {
+	max-height:250px;
+	
+	margin:0;
+	padding:0;
+	
+	display:block;
+	float:left;
+}
