@@ -88,9 +88,6 @@ h1 {
 					background-size:12px 11px;
 					background-position:left 6px;
 				}
-				.grid .grid-block .hover-overlay .grid_block_description .project-link {
-					
-				}
 				.grid .grid-block .hover-overlay .grid_block_description .project-link a:hover {
 					color:white;
 				}
@@ -101,10 +98,9 @@ h1 {
 			z-index:11;
 			transition:all 80ms cubic-bezier(0, 1, 0, 1) 0ms;
 		}
-			.grid .grid-block:hover .hover-overlay .grid_block_description {
-				
-			
-			}
+		
+		
+		
 .whoami {
 	position:relative;
 	color:black;
@@ -138,7 +134,17 @@ h1 {
 	height:200px;
 	margin-bottom:10px;
 }
+.grid.mobile .grid-block.touched .hover-overlay {
+	opacity:1;
+	transition-delay:0ms;
+	transform:scale(1);
+	z-index:11;
+	transition:all 80ms cubic-bezier(0, 1, 0, 1) 0ms;
+}
 .grid.mobile .grid-block .hover-overlay .grid_block_description h1 {
 	font-size:18px;
+}
+.grid.mobile .grid-block .hover-overlay .grid_block_description p {
+	display:none;
 }
 

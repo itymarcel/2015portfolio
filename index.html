@@ -19,20 +19,25 @@
 
   <script type="text/javascript">
   $(function() {
-function isMobile() {
-	try {
-		if(/Android|webOS|iPhone|iPad|iPod|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent)) {
-			return true;
-		} else {
-			return false;	
+	  var clickEvent = 'click';
+		function isMobile() {
+			try {
+				if(/Android|webOS|iPhone|iPad|iPod|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent)) {
+					return true;
+				} else {
+					return false;	
+				}
+			} catch(e) { 
+				console.log("Error in isMobile"); return false; 
+			}
 		}
-	} catch(e) { 
-		console.log("Error in isMobile"); return false; 
-	}
-}
 	  mobile = isMobile();
 	  if(isMobile()) {
 		  $('.grid').addClass('mobile');
+		  clickEvent = 'ontouchstart';
+		  $('.grid-block').on(clickEvent, function(e) {
+			  $(this).toggleClass('touched');
+		  });
 	  } else {
 	  	  $(".grid").nested({
 			  selector: '.grid-block',
@@ -42,6 +47,7 @@ function isMobile() {
 			  resizeToFit: false
 		  });
 	  }
+	  
 	  
   	  
 	  
@@ -70,15 +76,15 @@ function isMobile() {
       <div class="grid" data-layout="12">
 		  	<div class="grid-block size32" style="background-image:url('img/thmbs/fox_present.jpg');">
 	        	<img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>PROTOTYPR—SOFTWARE DEV</h1>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.<span class="project-link"><a href="#">Watch the demo video</a></span></div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><h1>PROTOTYPR—SOFTWARE DEV</h1><p>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p><span class="project-link"><a href="#">Watch the demo video</a></span></div></div>
 			</div>
 		  	<div class="grid-block size31" style="background-image:url('img/thmbs/guilab_doku.png');">
 	        	<img src="img/thmbs/guilab_doku.png" data-highres="img/demo/nyc1-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>GUILAB—DOCUMENTATION</h1>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><h1>GUILAB—DOCUMENTATION</h1><p>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</p></div></div>
 			</div>
 			<div class="grid-block size32" style="background-image:url('img/thmbs/turning_cover.jpg');">
 				<img src="img/thmbs/turning_cover.jpg"  data-highres="img/demo/nyc2-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p></div></div>
 			</div>
 			<div class="grid-block size31" style="background-image:url('img/thmbs/star.png');">
 	        	<img src="img/thmbs/star.png" data-highres="img/demo/nyc3-highres.jpg"></img>
@@ -98,7 +104,7 @@ function isMobile() {
 			</div>
 			<div class="grid-block size21" style="background-image:url('img/thmbs/ice_book-cover.jpg');">
 				<img src="img/thmbs/ice_book-cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>BOOK COVER</h1>This Image was produced for <i>The New Landscape of Mobile Learning: Redesigning Education in an App-Based World</i>.<span class="project-link"><a href="http://www.amazon.com/New-Landscape-Mobile-Learning-Redesigning-ebook/dp/B00IMYW5LI/ref=sr_1_1?ie=UTF8&qid=1421324283&sr=8-1&keywords=mobile+learning+landscape" target="_blank">Order the book on Amazon.com</a></span></div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><h1>BOOK COVER</h1><p>This Image was produced for <i>The New Landscape of Mobile Learning: Redesigning Education in an App-Based World</i>.</p><span class="project-link"><a href="http://www.amazon.com/New-Landscape-Mobile-Learning-Redesigning-ebook/dp/B00IMYW5LI/ref=sr_1_1?ie=UTF8&qid=1421324283&sr=8-1&keywords=mobile+learning+landscape" target="_blank">Order the book on Amazon.com</a></span></div></div>
 			</div>
 			<div class="grid-block size32" style="background-image:url('img/thmbs/multisound_photo.jpg');">
 				<img src="img/thmbs/multisound_photo.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
