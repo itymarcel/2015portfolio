@@ -37,13 +37,12 @@
 		  console.log(clickEvent);
 		  $('.grid-block').on('touchstart', function(e) {
 			  
-		  });
-		  $('.grid-block').on('touchend', function(e) {
-			  e.preventDefault();
+		  }).on('touchend', function(e) {
+			  e.preventDefault();			  
+		  }).on('tap', function(e) {
 			  $(this).toggleClass('touched');
 			  alert('HI');
-			  
-		  });
+		  })
 	  } else {
 	  	  $(".grid").nested({
 			  selector: '.grid-block',
