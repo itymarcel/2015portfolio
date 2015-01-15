@@ -54,17 +54,17 @@ h1 {
 			height:100%;
 			background:rgba(255, 105, 100, 0.95);
 			opacity:0;
-			transform:scale(0.85);
+			transform:scale(0.9);
 			transform-origin: 50% 50%;
-			transition:all 60ms cubic-bezier(0, 1, 0, 1) 0ms;
+			transition:all 80ms cubic-bezier(0, 1, 0, 1) 0ms;
 		}
 			.grid .grid-block .hover-overlay .grid_block_description {
 				opacity:1;
 				padding:20px;
 				cursor:default;
 				box-sizing:default;
-				max-width:430px;
-				transition:all 100ms ease-out 50ms;
+				max-width:500px;
+				
 			}
 				.grid .grid-block .hover-overlay .grid_block_description h1 {
 					margin-top:3px;
@@ -76,7 +76,15 @@ h1 {
 					width:auto;
 					margin-top:10px;
 					color:black;
+					padding-left:15px;
 					text-decoration:underline;
+					background-image:url('../res/arrow.svg');
+					background-repeat:no-repeat;
+					background-size:12px 11px;
+					background-position:left 6px;
+				}
+				.grid .grid-block .hover-overlay .grid_block_description .project-link {
+					
 				}
 				.grid .grid-block .hover-overlay .grid_block_description .project-link a:hover {
 					color:white;
@@ -86,6 +94,7 @@ h1 {
 			transition-delay:0ms;
 			transform:scale(1);
 			z-index:11;
+			transition:all 80ms cubic-bezier(0, 1, 0, 1) 0ms;
 		}
 			.grid .grid-block:hover .hover-overlay .grid_block_description {
 				
@@ -107,7 +116,7 @@ h1 {
 	display:inline-block;
 	color:rgba(255, 105, 100, 1);
 	text-decoration:underline;
-	margin-bottom:10px;
+	margin-bottom:3px;
 }
 .whoami a:hover {
 	color:black;
