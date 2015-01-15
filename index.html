@@ -34,8 +34,10 @@
 	  mobile = isMobile();
 	  if(isMobile()) {
 		  $('.grid').addClass('mobile');
-		  clickEvent = 'ontouchstart';
+		  clickEvent = 'touchend';
+		  console.log(clickEvent);
 		  $('.grid-block').on(clickEvent, function(e) {
+			  console.log("WORKS");
 			  $(this).toggleClass('touched');
 		  });
 	  } else {
