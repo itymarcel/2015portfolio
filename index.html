@@ -12,19 +12,48 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="makeboxes.js"></script>
   <script src="jquery.nested.js"></script>
+   <script src="packery.pkgd.js"></script>
   
 
   <script type="text/javascript">
   $(function() {
-  	  $(".grid").nested({
-		  selector: '.grid-block',
-		  minColumn: 3,
-		  minWidth: 200,
-		  gutter: 3,
-		  resizeToFit: false
-	  });
+function isMobile() {
+	try {
+		if(/Android|webOS|iPhone|iPad|iPod|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent)) {
+			return true;
+		} else {
+			return false;	
+		}
+	} catch(e) { 
+		console.log("Error in isMobile"); return false; 
+	}
+}
+	  mobile = isMobile();
+	  if(isMobile()) {
+		  $('.grid-block').addClass('mobile');
+	  } else {
+	  	  $(".grid").nested({
+			  selector: '.grid-block',
+			  minColumn: 3,
+			  minWidth: 200,
+			  gutter: 3,
+			  resizeToFit: false
+		  });
+	  }
+	  
+  	  
+	  
+	 /* var $container = $('.grid');
+	  // init
+	  $container.packery({
+	    itemSelector: '.grid-block',
+	    gutter: 3
+	  });*/
   })
+  
+  
   </script>
 
 </head>

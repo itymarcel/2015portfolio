@@ -291,8 +291,8 @@ if (!Object.keys) {
                 this.options.minColumns = col;
             }
 
-            while (true) {
-
+            while (true && tot < 20) {
+				tot++;
                 for (var y = col; y >= 0; y--) {
                     if (this.gridrow[gridy + y]) break;
                     this.gridrow[gridy + y] = new Object;
