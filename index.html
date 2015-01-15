@@ -38,10 +38,11 @@
 		  $('.grid-block').on('touchstart', function(e) {
 			  
 		  }).on('touchend', function(e) {
-			  e.preventDefault();			  
+			  //e.preventDefault();			  
 		  }).on('tap', function(e) {
+			  e.preventDefault();
 			  $(this).toggleClass('touched');
-			  alert('HI');
+			  console.log('tapped')
 		  })
 	  } else {
 	  	  $(".grid").nested({
