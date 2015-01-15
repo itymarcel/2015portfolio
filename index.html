@@ -12,20 +12,17 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="jquery.nested.js"></script>
   
 
   <script type="text/javascript">
   $(function() {
-  	  $('.grid-block').on('click', function(e) {
-		  img = $(this).children('img');
-		  imgMaxHeight = img.css('max-height');
-		  if(imgMaxHeight == "250px") {
-			  console.log("HI");
-		  	  $(this).children('img').css('max-height', '100%');
-		  } else {
-		  	$(this).children('img').css('max-height', '250px');
-		  }
-  	  });
+  	  $(".grid").nested({
+		  selector: '.grid-block',
+		  minWidth: 200,
+		  gutter: 3,
+		  resizeToFit: false
+	  });
   })
   </script>
 
@@ -33,35 +30,39 @@
 <body>
 
       <div class="grid" data-layout="12">
-		  	<div class="grid-block">
+		  	<div class="grid-block size32" style="background-image:url('img/thmbs/fox_present.jpg');">
 	        	<img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
 				<div class="hover-overlay"><div class="grid_block_description">Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</div></div>
 			</div>
-			<div class="grid-block">
+		  	<div class="grid-block size31" style="background-image:url('img/thmbs/guilab_doku.png');">
+	        	<img src="img/thmbs/guilab_doku.png" data-highres="img/demo/nyc1-highres.jpg"></img>
+				<div class="hover-overlay"><div class="grid_block_description">Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</div></div>
+			</div>
+			<div class="grid-block size32" style="background-image:url('img/thmbs/turning_cover.jpg');">
 				<img src="img/thmbs/turning_cover.jpg"  data-highres="img/demo/nyc2-highres.jpg"></img>
 				<div class="hover-overlay"><div class="grid_block_description">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</div></div>
 			</div>
-			<div class="grid-block">
+			<div class="grid-block size31" style="background-image:url('img/thmbs/star.png');">
 	        	<img src="img/thmbs/star.png" data-highres="img/demo/nyc3-highres.jpg"></img>
 				<div class="hover-overlay"></div>
 			</div>
-			<div class="grid-block">
+			<div class="grid-block size21" style="background-image:url('img/thmbs/loader.png');">
 				<img src="img/thmbs/loader.png" data-highres="img/demo/nyc3-highres.jpg"></img>
 				<div class="hover-overlay"></div>
 			</div>
-			<div class="grid-block">
+			<div class="grid-block size22" style="background-image:url('img/thmbs/oneep_cover.jpg');">
 				<img src="img/thmbs/oneep_cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
 				<div class="hover-overlay"></div>
 			</div>
-			<div class="grid-block">
+			<div class="grid-block size22" style="background-image:url('img/thmbs/sun_posted.png');">
 				<img src="img/thmbs/sun_posted.png" data-highres="img/demo/nyc3-highres.jpg"></img>
 				<div class="hover-overlay"></div>
 			</div>
-			<div class="grid-block">
+			<div class="grid-block size21" style="background-image:url('img/thmbs/ice_book-cover.jpg');">
 				<img src="img/thmbs/ice_book-cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
 				<div class="hover-overlay"></div>
 			</div>
-			<div class="grid-block">
+			<div class="grid-block size32" style="background-image:url('img/thmbs/multisound_photo.jpg');">
 				<img src="img/thmbs/multisound_photo.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
 				<div class="hover-overlay"></div>
 			</div>

@@ -1,7 +1,7 @@
 html, body {
 	margin:0;
 	padding:0;
-	background:black;
+	background:#111;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight:bold;
 	font-size:14px;
@@ -19,11 +19,19 @@ html, body {
 		height:auto;
 		display:block;
 		float:left;
+		overflow:hidden;
+		background-size:cover;
+		background-position:center;
 	
 	}
+	.grid .grid-block:hover img {
+		transform:scale(1.15);
+	}
 		.grid .grid-block img {
+			display:none;
 			position:relative;
-			max-height:300px;
+			max-height:100%;
+			max-width:100%;
 			margin:0;
 			padding:0;
 			vertical-align:middle;
