@@ -1,7 +1,7 @@
 html, body {
 	margin:0;
 	padding:0;
-	background:#111;
+	background:#f9f9f9;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight:bold;
 	font-size:14px;
@@ -11,6 +11,9 @@ html, body {
 a, a:visited, a:hover, a:active {
 	color:inherit;
 	text-decoration:inherit;
+}
+h1 {
+	text-transform: uppercase;
 }
 .grid {
 	position:relative;
@@ -86,3 +89,18 @@ a, a:visited, a:hover, a:active {
 				
 			
 			}
+.whoami {
+	position:relative;
+	color:black;
+	margin-bottom:100px;
+	padding-left:20px;
+	padding-top:5px;
+}
+.whoami p {
+	max-width:600px;
+}
+.whoami a {
+	display:block;
+	color:rgba(255, 105, 100, 1);
+	text-decoration:underline;
+}
