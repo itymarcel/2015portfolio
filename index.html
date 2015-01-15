@@ -35,9 +35,13 @@
 		  $('.grid').addClass('mobile');
 		  clickEvent = 'tap';
 		  console.log(clickEvent);
-		  $('.grid-block').on('click', function(e) {
-			  console.log("WORKS");
+		  $('.grid-block').on('touchstart', function(e) {
+			  
+		  });
+		  $('.grid-block').on('touchend', function(e) {
+			  e.preventDefault();
 			  $(this).toggleClass('touched');
+			  
 		  });
 	  } else {
 	  	  $(".grid").nested({
