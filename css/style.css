@@ -127,3 +127,18 @@ h1 {
 	color:black;
 }
 
+
+/* MOBILE RULES */
+.grid.mobile {
+	padding:0;
+	margin:0;
+}
+.grid.mobile .grid-block {
+	width:100%;
+	height:200px;
+	margin-bottom:10px;
+}
+.grid.mobile .grid-block .hover-overlay .grid_block_description h1 {
+	font-size:18px;
+}
+
