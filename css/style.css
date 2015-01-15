@@ -6,7 +6,11 @@ html, body {
 	font-weight:bold;
 	font-size:14px;
 	line-height:1.5em;
-	color:white;
+	color:black;
+}
+a, a:visited, a:hover, a:active {
+	color:inherit;
+	text-decoration:inherit;
 }
 .grid {
 	position:relative;
@@ -43,7 +47,7 @@ html, body {
 			top:0;
 			width:100%;
 			height:100%;
-			background:rgba(0, 0, 0, 0.8);
+			background:rgba(255, 105, 100, 0.95);
 			opacity:0;
 			transform:scale(0.85);
 			transform-origin: 50% 50%;
@@ -52,9 +56,26 @@ html, body {
 			.grid .grid-block .hover-overlay .grid_block_description {
 				opacity:1;
 				padding:20px;
+				cursor:default;
 				box-sizing:default;
+				max-width:430px;
 				transition:all 100ms ease-out 50ms;
 			}
+				.grid .grid-block .hover-overlay .grid_block_description h1 {
+					margin-top:3px;
+					padding-top:0;
+					margin-bottom:13px;
+				}
+				.grid .grid-block .hover-overlay .grid_block_description .project-link {
+					display:block;
+					width:auto;
+					margin-top:10px;
+					color:black;
+					text-decoration:underline;
+				}
+				.grid .grid-block .hover-overlay .grid_block_description .project-link a:hover {
+					color:white;
+				}
 		.grid .grid-block:hover .hover-overlay {
 			opacity:1;
 			transition-delay:0ms;
