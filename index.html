@@ -9,39 +9,62 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- 
-
-  <!--<link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/colorbox.css" />-->
   <link rel="stylesheet" href="css/style.css" />
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="_/js/libs/jquery-1.9.1.min.js"><\/script>')</script>
   
-  <script src="jquery.photoset-grid.min.js"></script>
 
   <script type="text/javascript">
-
-  
-  	
-
+  $(function() {
+  	  $('.grid-block').on('click', function(e) {
+		  img = $(this).children('img');
+		  imgMaxHeight = img.css('max-height');
+		  if(imgMaxHeight == "250px") {
+			  console.log("HI");
+		  	  $(this).children('img').css('max-height', '100%');
+		  } else {
+		  	$(this).children('img').css('max-height', '250px');
+		  }
+  	  });
+  })
   </script>
 
 </head>
 <body>
 
       <div class="grid" data-layout="12">
-
-	        <img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
-
-			<img src="img/thmbs/turning_cover.jpg"  data-highres="img/demo/nyc2-highres.jpg"></img>
-
-	        <img src="img/thmbs/star.png" data-highres="img/demo/nyc3-highres.jpg"></img>
-			 <img src="img/thmbs/loader.png" data-highres="img/demo/nyc3-highres.jpg"></img>
-			  <img src="img/thmbs/oneep_cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
-			   <img src="img/thmbs/sun_posted.png" data-highres="img/demo/nyc3-highres.jpg"></img>
-			    <img src="img/thmbs/ice_book-cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
-				 <img src="img/thmbs/multisound_photo.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
+		  	<div class="grid-block">
+	        	<img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
+				<div class="hover-overlay"><div class="grid_block_description">Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</div></div>
+			</div>
+			<div class="grid-block">
+				<img src="img/thmbs/turning_cover.jpg"  data-highres="img/demo/nyc2-highres.jpg"></img>
+				<div class="hover-overlay"><div class="grid_block_description">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</div></div>
+			</div>
+			<div class="grid-block">
+	        	<img src="img/thmbs/star.png" data-highres="img/demo/nyc3-highres.jpg"></img>
+				<div class="hover-overlay"></div>
+			</div>
+			<div class="grid-block">
+				<img src="img/thmbs/loader.png" data-highres="img/demo/nyc3-highres.jpg"></img>
+				<div class="hover-overlay"></div>
+			</div>
+			<div class="grid-block">
+				<img src="img/thmbs/oneep_cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
+				<div class="hover-overlay"></div>
+			</div>
+			<div class="grid-block">
+				<img src="img/thmbs/sun_posted.png" data-highres="img/demo/nyc3-highres.jpg"></img>
+				<div class="hover-overlay"></div>
+			</div>
+			<div class="grid-block">
+				<img src="img/thmbs/ice_book-cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
+				<div class="hover-overlay"></div>
+			</div>
+			<div class="grid-block">
+				<img src="img/thmbs/multisound_photo.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
+				<div class="hover-overlay"></div>
+			</div>
       </div>
      
 </body>
