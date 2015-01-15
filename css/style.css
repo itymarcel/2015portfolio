@@ -21,6 +21,7 @@ h1 {
 	margin:0;
 	margin-left:20px;
 	margin-right:20px;
+	margin-bottom:20px;
 	padding:0;
 	width:auto;
 }
@@ -113,11 +114,21 @@ h1 {
 	max-width:600px;
 	
 }
+.whoami h1 {
+
+}
 .whoami a {
 	display:inline-block;
 	color:rgba(255, 105, 100, 1);
 	text-decoration:underline;
 	margin-bottom:3px;
+}
+.whoami h1 a {
+	color:black;
+	text-decoration:none;
+}
+.whoami h1 a:hover {
+	text-decoration:noone;
 }
 .whoami a:hover {
 	color:black;
