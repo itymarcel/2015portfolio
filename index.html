@@ -10,17 +10,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/featherlight.css" />
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="jquery.mobile.custom.min.js"></script>
   <script type="text/javascript" src="jquery.nested.js"></script>
-  <script type="text/javascript" src="js/jquery.chillbox.js"></script>
+  <script type="text/javascript" src="js/featherlight.js"></script>
   
 
   <script type="text/javascript">
   $(function() {
-  		//INIT CHILLBOX
-  		$('[rel$=ChillBox]').ChillBox();
+
+  	$('a.lightboxed').featherlight({afterContent: function(event){
+	    console.log(this); // this contains all related elements
+	    $(this.$content[0]).css({
+	    	'max-height': $('.featherlight-content').height()
+	    });
+	    console.log(event.currentTarget);
+	    console.log($('.featherlight-content').height());
+	}});
 	  var clickEvent = 'click';
 		function isMobile() {
 			try {
@@ -123,7 +131,7 @@
 			</div>
 			<div class="grid-block size21" style="background-image:url('img/thmbs/ice_book-cover.jpg');">
 				<img src="img/thmbs/ice_book-cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>BOOK COVER</h1><p>This Image was produced for <i>The New Landscape of Mobile Learning: Redesigning Education in an App-Based World</i>.</p><span class="project-link"><a href='img/big/iceberg_print.jpg' rel="ChillBox" title="Iceberg">See in bigger</a></span><span class="project-link"><a href="http://www.amazon.com/New-Landscape-Mobile-Learning-Redesigning-ebook/dp/B00IMYW5LI/ref=sr_1_1?ie=UTF8&qid=1421324283&sr=8-1&keywords=mobile+learning+landscape" target="_blank">Order the book by Charles Miller on Amazon.com</a></span></div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><h1>BOOK COVER</h1><p>This Image was produced for <i>The New Landscape of Mobile Learning: Redesigning Education in an App-Based World</i>.</p><span class="project-link"><a href="#" class="lightboxed" data-featherlight="img/big/iceberg_print.jpg">See in bigger</a></span><span class="project-link"><a href="http://www.amazon.com/New-Landscape-Mobile-Learning-Redesigning-ebook/dp/B00IMYW5LI/ref=sr_1_1?ie=UTF8&qid=1421324283&sr=8-1&keywords=mobile+learning+landscape" target="_blank">Order the book by Charles Miller on Amazon.com</a></span></div></div>
 			</div>
       </div>
      
