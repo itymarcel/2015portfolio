@@ -74,11 +74,12 @@ h1 {
 			}
 				.grid .grid-block .hover-overlay .grid_block_description p {
 					margin-top:0;
+					margin-bottom:8px;
 				}
 				.grid .grid-block .hover-overlay .grid_block_description h1 {
 					margin-top:3px;
 					padding-top:0;
-					margin-bottom:13px;
+					margin-bottom:7px;
 				}
 				.grid .grid-block .hover-overlay .grid_block_description .project-link {
 					display:block;
@@ -120,6 +121,43 @@ h1 {
 .whoami h1 {
 
 }
+	.whoami .info {
+		position:absolute;
+		top:1.8em;
+		right:0.8em;
+		font-size:11px;
+	}
+		.whoami .info .info-call {
+			text-decoration:underline;
+			cursor:pointer;
+		}
+			.whoami .info .info-call span:first-child {
+				display:inline;
+			}
+			.whoami .info .info-call span:last-child {
+				display:none;
+			}
+			.whoami .info .info-call.open span:first-child {
+				display:none;
+			}
+			.whoami .info .info-call.open span:last-child {
+				display:inline;
+			}
+		.whoami .info .info-call:hover {
+			text-decoration: none;
+		}
+		.whoami .info .text {
+			margin-top:10px;
+			display:none;
+		}
+			.whoami .info .text a {
+				
+				margin:0;
+			}
+		.whoami .info .text.visible {
+			display:block;
+		}
+
 .whoami a {
 	display:inline-block;
 	color:rgba(255, 105, 100, 1);

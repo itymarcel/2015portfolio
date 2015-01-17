@@ -11,24 +11,43 @@
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/featherlight.css" />
+  <link rel="stylesheet" href="css/featherlight.gallery.css" />
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="jquery.mobile.custom.min.js"></script>
   <script type="text/javascript" src="jquery.nested.js"></script>
   <script type="text/javascript" src="js/featherlight.js"></script>
+  <script type="text/javascript" src="js/featherlight.gallery.js"></script>
   
 
   <script type="text/javascript">
   $(function() {
 
-  	$('a.lightboxed').featherlight({afterContent: function(event){
-	    console.log(this); // this contains all related elements
-	    $(this.$content[0]).css({
-	    	'max-height': $('.featherlight-content').height()
-	    });
-	    console.log(event.currentTarget);
-	    console.log($('.featherlight-content').height());
-	}});
+
+
+  	$('a.lightboxed').featherlight({
+  		openSpeed: 150,
+  		afterContent: function(event){
+		    $(this.$content[0]).css({
+		    	'max-height': $('.featherlight-content').height()
+		    });
+		}
+	});
+	galleryConfig = {
+		previousIcon: 'prev',
+	    nextIcon: 'next',
+	    galleryFadeIn: 10,
+	    galleryFadeOut: 10,
+	    openSpeed: 150,
+	    afterContent: function(event){
+		    $(this.$content[0]).css({
+		    	'max-height': $('.featherlight-content').height()
+		    });
+		}
+	}
+	$('a.gallery-0').featherlightGallery(galleryConfig);
+	$('a.gallery-1').featherlightGallery(galleryConfig);
+	$('a.gallery-2').featherlightGallery(galleryConfig);
 	  var clickEvent = 'click';
 		function isMobile() {
 			try {
@@ -47,16 +66,24 @@
 
 		  $('.hover-overlay').addClass('invisible');
 		  $('.grid-block').on('touchstart', function(e) {
-			  if ($(e.target).is('a')) return
-			  $('.hover-overlay').removeClass('invisible');
+			  if (!$(e.target).is('a')) {
+				  $('.hover-overlay').removeClass('invisible');
+				}
 		  }).on('touchend', function(e) {
-			  if ($(e.target).is('a')) return
-			  $('.hover-overlay').addClass('invisible');		  
+			  if (!$(e.target).is('a')) {
+				  $('.hover-overlay').addClass('invisible');
+				}
 		  }).on('tap', function(e) {
-			  if ($(e.target).is('a')) return
-			  e.preventDefault();
-			  $(this).toggleClass('touched');
+			  if (!$(e.target).is('a')) {
+				  e.preventDefault();
+				  $(this).toggleClass('touched');
+				}
 		  })
+
+		  //info button top right
+		  $('.info-call').on('tap', function(e) {
+		  	toggleInfoField($(this));
+		  });
 	  } else {
 	  	  $(".grid").nested({
 			  selector: '.grid-block',
@@ -65,6 +92,14 @@
 			  gutter: 3,
 			  resizeToFit: false
 		  });
+		  $('.info-call').on('click', function(e) {
+		  	toggleInfoField($(this));
+		  });
+	  }
+
+	  function toggleInfoField(targetObject) {
+	  		$('.info .text').toggleClass('visible');
+	  		targetObject.toggleClass('open');
 	  }
 	  
 	  
@@ -85,6 +120,20 @@
 <body>
 	<div class="whoami">
 		<h1><a href="mailto:marcel@threethink.io">Marcel Mueller, Interaction Designer</a></h1>
+		<div class="info">
+			<div class="info-call">
+				<span>some more information</span>
+				<span>some less information</span>
+			</div>
+			<div class="text">
+				<a href="https://www.linkedin.com/profile/view?id=248182637" target="_blank">Linkedin</a> / <a href="https://www.xing.com/profile/Marcel_Mueller90" target="_blank">Xing</a><br/>
+				Mail: <a href="mailto:marcel@threethink.io">marcel@threethink.io</a><br/>
+				Phone: <a href="call:004915142466625">+49 151 42466625</a><br/>
+				
+				
+				Copyright Marcel M&uuml;ller, 2015
+			</div>
+		</div>
 		<p>Solving complex and simple problems as well as a passion for designing digital services and software is why I work in the field of interactiondesign.<br/>I am currently based in Stuttgart, Germany, doing all kinds of design related jobs<a style="color:black;" href="mailto:marcel@threethink.io">—waiting for the next challenge.</a></p>
 		<p>The things I'm creating can also be found on different platforms:</p>
 		<a href="https://vimeo.com/user2791735" target="_blank">Project videos and self-educating animations.</a><br/>
@@ -95,43 +144,116 @@
       <div class="grid" data-layout="12">
 		  	<div class="grid-block size32" style="background-image:url('img/thmbs/fox_present.jpg');">
 	        	<img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>PROTOTYPR—SOFTWARE DEV</h1><p>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p><span class="project-link"><a href="#">Watch the demo video</a></span></div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><h1>PROTOTYPR — SOFTWARE DEV</h1><p>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p><span class="project-link"><a href="#">Watch the demo video</a></span></div></div>
 			</div>
 		  	<div class="grid-block size31" style="background-image:url('img/thmbs/guilab_doku.png');">
-	        	<img src="img/thmbs/guilab_doku.png" data-highres="img/demo/nyc1-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>GUILAB—DOCUMENTATION</h1><p>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</p></div></div>
+	        	<div class="hover-overlay">
+	        		<div class="grid_block_description">
+	        			<h1>GUILAB — DOCUMENTATION</h1>
+	        			<p>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</p>
+						<span class="project-link">
+							<section data-featherlight-gallery data-featherlight-filter="a">
+								<a class="gallery-0" href="img/big/gld_01.jpg">See some more pictures</a>
+								<a class="gallery-0" href="img/big/gld_02.jpg"></a>
+								<a class="gallery-0" href="img/big/gld_03.jpg"></a>
+								<a class="gallery-0" href="img/big/gld_04.jpg"></a>
+							</section>
+						</span>
+					</div>
+				</div>
 			</div>
 		  	<div class="grid-block size32" style="background-image:url('img/thmbs/buttonlab.gif');">
-				<div class="hover-overlay"><div class="grid_block_description"><h1>TOUCHLESS BUTTON-LAB</h1><p>This is the Button Lab and i love it. Made for very fast prototyping Buttons that have to be pushed touch-less.</p></div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><h1>THE BUTTON LAB</h1><p>This is the Button Lab and i love it. Made for very fast prototyping Buttons that have to be pushed touch-less.</p></div></div>
 			</div>
-			<div class="grid-block size32" style="background-image:url('img/thmbs/turning_cover.jpg');">
-				<img src="img/thmbs/turning_cover.jpg"  data-highres="img/demo/nyc2-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p></div></div>
+			<div class="grid-block size32" style="background-image:url('img/thmbs/moving_types_wall.jpg');">
+	        	<div class="hover-overlay">
+	        		<div class="grid_block_description">
+	        			<h1>MOVING TYPES — EXHIBITION</h1>
+	        			<p>“Moving Types” is an interactive, digital exhibition made by students and teachers. It took place on various cities of the world.<br/>Luckily I've been part of the conception for story telling in 3d space and responsible for the iPad App design and promotion video along with a few colleagues.</p>
+						<span class="project-link">
+							<section data-featherlight-gallery data-featherlight-filter="a">
+								<a class="gallery-2" href="img/big/moving_types_00.jpg">See some more exhibition pictures</a>
+								<a class="gallery-2" href="img/big/moving_types_01.jpg"></a>
+								<a class="gallery-2" href="img/big/moving_types_02.jpg"></a>
+								<a class="gallery-2" href="img/big/moving_types_03.jpg"></a>
+								<a class="gallery-2" href="img/big/moving_types_04.jpg"></a>
+								<a class="gallery-2" href="img/big/moving_types_05.jpg"></a>
+							</section>
+						</span>
+						<span class="project-link">
+							<a href='https://vimeo.com/48196802' target='_blank'>The promo video on vimeo</a>
+						</span>
+						<span class="project-link">
+							<a href='http://www.moving-types.de/' target='_blank'>Moving Types Website</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="grid-block size31" style="background-image:url('img/thmbs/turning_cover.jpg');">
+				<div class="hover-overlay">
+					<div class="grid_block_description">
+						<h1>TURNING EP</h1>
+						<p>This image was created after finishing the second track of the EP: Levitate. It's supposed to represent the combination of EP name and song name.</p>
+						
+						<span class="project-link"><a href="https://soundcloud.com/finji-1/sets/turning-project" target="_blank">Listen to “Turning EP” in full length</a></span>
+						<span class="project-link"><a href="#" class="lightboxed" data-featherlight="img/big/turning_cover.jpg">See the image in big</a></span>
+						<span class="project-link"><a href="https://vimeo.com/112520476" target="_blank">Watch a short animation to quitstart.</a></span>
+					</div>
+				</div>
 			</div>
 			
 			<div class="grid-block size31" style="background-image:url('img/thmbs/star.png');">
-	        	<img src="img/thmbs/star.png" data-highres="img/demo/nyc3-highres.jpg"></img>
-				<div class="hover-overlay"></div>
+				<div class="hover-overlay">
+					<div class="grid_block_description">
+						<h1>STARS — TRACK COVER</h1>
+						<p>Images for a series of tracks, as part of the concept that each song represents his own planet.</p>
+						<span class="project-link">
+							<section data-featherlight-gallery data-featherlight-filter="a">
+								<a href="#" class="gallery-1" data-featherlight="img/big/star.png">See three planets</a>
+								<a href="#" class="gallery-1" data-featherlight="img/big/psyphere_posted.png"></a>
+								<a href="#" class="gallery-1" data-featherlight="img/big/sun_posted.png"></a>
+							</section>
+						</span>
+					</div>
+				</div>
 			</div>
 			<div class="grid-block size21" style="background-image:url('img/thmbs/metaloader.gif');">
-				<img src="img/thmbs/loader.png" data-highres="img/demo/nyc3-highres.jpg"></img>
-				<div class="hover-overlay"></div>
+				<div class="hover-overlay">
+					<div class="grid_block_description"><h1>JUST A LOAH</h1><p>One result from experimeting with some animation styles.</div>
+				</div>
 			</div>
 			<div class="grid-block size22" style="background-image:url('img/thmbs/oneep_cover.jpg');">
-				<img src="img/thmbs/oneep_cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
-				<div class="hover-overlay"></div>
+				<div class="hover-overlay">
+					<div class="grid_block_description">
+						<h1>ONE EP</h1>
+						<p>ONE EP was the first real, organized track collection I've uploaded to the internet.</p>
+						<span class="project-link">
+							<a href="https://soundcloud.com/finji-1/sets/one-ep" target="_blank">Listen to the album on soundcloud</a>
+						</span>
+						<span class="project-link">
+							<a href="#" class="lightboxed" data-featherlight="img/big/oneep_cover.jpg">The cover in big</a>
+						</span>
+					</div>
+				</div>
 			</div>
-			<div class="grid-block size22" style="background-image:url('img/thmbs/sun_posted.png');">
-				<img src="img/thmbs/sun_posted.png" data-highres="img/demo/nyc3-highres.jpg"></img>
-				<div class="hover-overlay"></div>
-			</div>
+			
 			<div class="grid-block size31" style="background-image:url('img/thmbs/lemurvideosnippet.gif');">
 				
 				<div class="hover-overlay"><div class="grid_block_description"><h1>LEMUR, GESTURE MUSIC</h1><p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p></div></div>
 			</div>
 			<div class="grid-block size21" style="background-image:url('img/thmbs/ice_book-cover.jpg');">
-				<img src="img/thmbs/ice_book-cover.jpg" data-highres="img/demo/nyc3-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>BOOK COVER</h1><p>This Image was produced for <i>The New Landscape of Mobile Learning: Redesigning Education in an App-Based World</i>.</p><span class="project-link"><a href="#" class="lightboxed" data-featherlight="img/big/iceberg_print.jpg">See in bigger</a></span><span class="project-link"><a href="http://www.amazon.com/New-Landscape-Mobile-Learning-Redesigning-ebook/dp/B00IMYW5LI/ref=sr_1_1?ie=UTF8&qid=1421324283&sr=8-1&keywords=mobile+learning+landscape" target="_blank">Order the book by Charles Miller on Amazon.com</a></span></div></div>
+				<div class="hover-overlay">
+					<div class="grid_block_description">
+						<h1>BOOK COVER</h1>
+						<p>This Image was produced for <i>The New Landscape of Mobile Learning: Redesigning Education in an App-Based World</i>.</p>
+						<span class="project-link">
+							<a href="#" class="lightboxed" data-featherlight="img/big/iceberg_print.jpg">See in bigger</a>
+						</span>
+						<span class="project-link">
+							<a href="http://www.amazon.com/New-Landscape-Mobile-Learning-Redesigning-ebook/dp/B00IMYW5LI/ref=sr_1_1?ie=UTF8&qid=1421324283&sr=8-1&keywords=mobile+learning+landscape" target="_blank">Order the book by Charles Miller on Amazon.com</a>
+						</span>
+					</div>
+				</div>
 			</div>
       </div>
      
