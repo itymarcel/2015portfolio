@@ -126,11 +126,8 @@
 @media only screen and (max-width: 1024px) {
 	.featherlight .featherlight-content {
 		/* dimensions: maximize lightbox with for small screens */
-		margin-left: 10px;
-		margin-right: 10px;
+		
 		max-height: 98%;
-
-		padding: 10px 10px 0;
-		border-bottom: 10px solid transparent;
+		max-width:100%;
 	}
 }

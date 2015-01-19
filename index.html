@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/featherlight.css" />
   <link rel="stylesheet" href="css/featherlight.gallery.css" />
 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
   <script type="text/javascript" src="jquery.mobile.custom.min.js"></script>
   <script type="text/javascript" src="jquery.nested.js"></script>
   <script type="text/javascript" src="js/featherlight.js"></script>
@@ -65,7 +65,7 @@
 		  $('.grid').addClass('mobile');
 
 		  $('.hover-overlay').addClass('invisible');
-		  $('.grid-block').on('touchstart', function(e) {
+		  /*$('.grid-block').on('touchstart', function(e) {
 			  if (!$(e.target).is('a')) {
 				  $('.hover-overlay').removeClass('invisible');
 				}
@@ -73,11 +73,17 @@
 			  if (!$(e.target).is('a')) {
 				  $('.hover-overlay').addClass('invisible');
 				}
-		  }).on('tap', function(e) {
+		  }).*/
+		  $('.grid-block').on('tap', function(e) {
 			  if (!$(e.target).is('a')) {
 				  e.preventDefault();
 				  $(this).toggleClass('touched');
+				} else {
+					$(e.target).click();
 				}
+		  })
+		  $('.grid-block a').on('tap', function(e) {
+			  console.log('a pressed');
 		  })
 
 		  //info button top right
@@ -137,7 +143,7 @@
 				Copyright Marcel M&uuml;ller, 2015
 			</div>
 		</div>
-		<p>Solving complex and simple problems as well as a passion for designing digital services and software is why I work in the field of interactiondesign.<br/>I am currently based in Stuttgart, Germany, doing all kinds of design related jobs<a style="color:black;" href="mailto:marcel@threethink.io">and waiting for the next challenge.</a></p>
+		<p>Solving complex and simple problems as well as a passion for designing digital services and software is why I work in the field of interactiondesign.<br/>I am currently based in Stuttgart, Germany, doing all kinds of design related jobs<a style="color:black;" href="mailto:marcel@threethink.io">I'm ready for the next exciting and fun project.</a></p>
 		<p>The things I create can also be found on different platforms:</p>
 		<a href="https://vimeo.com/user2791735" target="_blank">Project videos and self-educating animations.</a><br/>
 		<a href="https://dribbble.com/blaufasan" target="_blank">For the love of graphics and animated gifs.</a><br/>
@@ -147,7 +153,7 @@
       <div class="grid" data-layout="12">
 		  	<div class="grid-block size32" style="background-image:url('img/thmbs/fox_present.jpg');">
 	        	<img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>GUILAB — PROTOTYPR</h1><p>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p><span class="project-link"><a href="https://vimeo.com/61540259" target="_blank">Watch the demo video</a></span></div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><h1>GUILAB — PROTOTYPR</h1><p>By the time of developing, there was no software that supports interaction designers through out their whole design process.<br/> Talking to many different designers from all over the world built the core for the development of Prototypr.<br/><br/>Resulting out of over 20 interviews was the need for a software that brings ideas to life as fast as possible. Prototypr is part I of the guilab suite. </p><span class="project-link"><a href="https://vimeo.com/61540259" target="_blank">Watch the demo video</a></span></div></div>
 			</div>
 			<div class="grid-block size22" style="background-image:url('img/thmbs/lighthouse.jpg');">
 				<div class="hover-overlay">
