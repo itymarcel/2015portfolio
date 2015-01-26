@@ -35,13 +35,7 @@ h1 {
 		background-size:cover;
 		background-position:center;
 	}
-	.grid .grid-block.mobile {
-		width:100%;
-		height:200px;
-	}
-	.grid .grid-block:hover img {
-		transform:scale(1.15);
-	}
+	
 		.grid .grid-block img {
 			display:none;
 			position:relative;
@@ -54,7 +48,7 @@ h1 {
 		}
 		.grid .grid-block .hover-overlay {
 			display:block;
-			position:absolute;
+			position:relative;
 			top:0;
 			width:100%;
 			height:100%;
@@ -183,7 +177,7 @@ h1 {
 }
 .grid.mobile .grid-block {
 	width:100%;
-	height:220px;
+	height:260px;
 	margin-bottom:0px;
 	cursor:pointer;
 }
@@ -210,6 +204,16 @@ h1 {
 	font-size:18px;
 }
 .grid.mobile .grid-block .hover-overlay .grid_block_description p {
-	display:none;
+	font-size:12px;
+	line-height:15px;
+	max-width:90%;
+}
+.grid.mobile .grid-block .hover-overlay .grid_block_description .project-link {
+	background-size:10px 9px;
+	font-size:12px;
 }
 
+@media only screen and (max-width: 1020px) {
+		.grid .grid-block:hover .hover-overlay {
+		}
+}
