@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/featherlight.css" />
   <link rel="stylesheet" href="css/featherlight.gallery.css" />
 
-  <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="jquery.mobile.custom.min.js"></script>
   <script type="text/javascript" src="jquery.nested.js"></script>
   <script type="text/javascript" src="js/featherlight.js"></script>
@@ -48,6 +48,7 @@
 	$('a.gallery-0').featherlightGallery(galleryConfig);
 	$('a.gallery-1').featherlightGallery(galleryConfig);
 	$('a.gallery-2').featherlightGallery(galleryConfig);
+  $('a.gallery-3').featherlightGallery(galleryConfig);
 	  var clickEvent = 'click';
 		function isMobile() {
 			try {
@@ -65,7 +66,7 @@
 		  $('.grid').addClass('mobile');
 
 		  $('.hover-overlay').addClass('invisible');
-		  /*$('.grid-block').on('touchstart', function(e) {
+		  $('.grid-block').on('touchstart', function(e) {
 			  if (!$(e.target).is('a')) {
 				  $('.hover-overlay').removeClass('invisible');
 				}
@@ -73,17 +74,11 @@
 			  if (!$(e.target).is('a')) {
 				  $('.hover-overlay').addClass('invisible');
 				}
-		  }).*/
-		  $('.grid-block').on('tap', function(e) {
+		  }).on('tap', function(e) {
 			  if (!$(e.target).is('a')) {
 				  e.preventDefault();
 				  $(this).toggleClass('touched');
-				} else {
-					$(e.target).click();
 				}
-		  })
-		  $('.grid-block a').on('tap', function(e) {
-			  console.log('a pressed');
 		  })
 
 		  //info button top right
@@ -139,21 +134,36 @@
 				„Fotos“: <a href="https://www.flickr.com/photos/finposures/" target="_blank">On Flickr</a><br/>
 				RndmTmb: <a href="http://blaufasan.tumblr.com/" target="_blank">On Tumblr</a><br/><br/>
 
-
-				Copyright Marcel M&uuml;ller, 2015
+        Also worked for moovel GmbH, car2go GmbH,<br/>Daimler AG, GIRA, GFT AG, TATA Interactive
+        <br/><br/>
+				Copyright Marcel M&uuml;ller, 2015 — <a href="impressum.html" target="_blank">Impressum</a>
 			</div>
 		</div>
-		<p>Solving complex and simple problems as well as a passion for designing digital services and software is why I work in the field of interactiondesign.<br/>I am currently based in Stuttgart, Germany, doing all kinds of design related jobs<a style="color:black;" href="mailto:marcel@threethink.io">I'm ready for the next exciting and fun project.</a></p>
+		<p>Solving simple and complex problems as well as a passion for designing services and software is why I work in the field of interactiondesign — inter- and antidisciplinary.<br/>I am currently based in Stuttgart, Germany, doing all kinds of design related jobs and things — <a style="color:black;" href="mailto:marcel@threethink.io">waiting for the next challenge.</a></p>
 		<p>The things I create can also be found on different platforms:</p>
+    <a href="http://www.threethink.io/" target="_blank">Me and the guys on a journey.</a><br/>
 		<a href="https://vimeo.com/user2791735" target="_blank">Project videos and self-educating animations.</a><br/>
 		<a href="https://dribbble.com/blaufasan" target="_blank">For the love of graphics and animated gifs.</a><br/>
 		<a href="https://soundcloud.com/finji-1" target="_blank">„Hi there, I'm finji and I produce music.“</a><br/>
 		<a href="http://www.interactionblog.com" target="_blank">The interactionblog by Antonio, Patric and me.</a><br/>
 	</div>
       <div class="grid" data-layout="12">
+        <div class="grid-block size31" style="background-image:url('img/thmbs/turning_cover.jpg');">
+          <div class="hover-overlay">
+            <div class="grid_block_description">
+              <h1>TURNING EP</h1>
+              <p>This image was created after finishing the EPs second track: “Levitate”. It's supposed to represent the combination of EP name and song name.</p>
+
+              <span class="project-link"><a href="https://soundcloud.com/finji-1/sets/turning-project" target="_blank">Listen to “Turning EP” in full length</a></span>
+              <span class="project-link"><a href="#" class="lightboxed" data-featherlight="img/big/turning_cover.jpg">See the image in big</a></span>
+              <span class="project-link"><a href="https://vimeo.com/112520476" target="_blank">Watch a short animation to quitstart.</a></span>
+            </div>
+          </div>
+        </div>
+        
 		  	<div class="grid-block size32" style="background-image:url('img/thmbs/fox_present.jpg');">
 	        	<img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>GUILAB — PROTOTYPR</h1><p>By the time of developing, there was no software that supports interaction designers through out their whole design process.<br/> Talking to many different designers from all over the world built the core for the development of Prototypr.<br/><br/>Resulting out of over 20 interviews was the need for a software that brings ideas to life as fast as possible. Prototypr is part I of the guilab suite. </p><span class="project-link"><a href="https://vimeo.com/61540259" target="_blank">Watch the demo video</a></span></div></div>
+				<div class="hover-overlay"><div class="grid_block_description"><h1>GUILAB — PROTOTYPR</h1><p>Nowadays its getting more and more important to prototype software and hardware in the early process. This allows us to actually see things we have in mind very fast and therefor can evaluate better. <br/>For that, we created Prototypr—part I of the GUILab Suite. But even prototypr stil is only a prototype.</p><span class="project-link"><a href="https://vimeo.com/61540259" target="_blank">Watch the demo video</a></span></div></div>
 			</div>
 			<div class="grid-block size22" style="background-image:url('img/thmbs/lighthouse.jpg');">
 				<div class="hover-overlay">
@@ -169,10 +179,10 @@
 	        	<div class="hover-overlay">
 	        		<div class="grid_block_description">
 	        			<h1>GUILAB — DOCUMENTATION</h1>
-	        			<p>Prototyper is a Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</p>
+	        			<p>Both, Prototypr and Lighthouse were part of the GUILab Suite. A set of tools, made especially for interaction designers.</p>
 						<span class="project-link">
 							<section data-featherlight-gallery data-featherlight-filter="a">
-								<a class="gallery-0" href="img/big/gld_01.jpg">See some more pictures</a>
+								<a class="gallery-0" href="img/big/gld_01.jpg">Four, top-view, documentation pictures.</a>
 								<a class="gallery-0" href="img/big/gld_02.jpg"></a>
 								<a class="gallery-0" href="img/big/gld_03.jpg"></a>
 								<a class="gallery-0" href="img/big/gld_04.jpg"></a>
@@ -184,7 +194,7 @@
 		  	<div class="grid-block size32" style="background-image:url('img/thmbs/buttonlab.gif');">
 				<div class="hover-overlay">
 					<div class="grid_block_description">
-						<h1>BUTTON LAB — TOUCHLESS INTERFACE</h1><p>This is the Button Lab and i love it. Made for very fast prototyping Buttons that have to be pushed touch-less.</p>
+						<h1>BUTTON LAB — TOUCHLESS INTERFACE</h1><p>“To drive innovation, never stop exploring new ways and possibilities of interacting with stuff.” — This is the Button Lab. Made for very fast prototyping touchless buttons on displays in specific situations.</p>
 						<span class="project-link">
 							<a href="https://vimeo.com/24512871" target="_blank">Watch the video of the functional prototype on vimeo</a>
 						</span>
@@ -215,18 +225,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="grid-block size31" style="background-image:url('img/thmbs/turning_cover.jpg');">
-				<div class="hover-overlay">
-					<div class="grid_block_description">
-						<h1>TURNING EP</h1>
-						<p>This image was created after finishing the second track of the EP: Levitate. It's supposed to represent the combination of EP name and song name.</p>
 
-						<span class="project-link"><a href="https://soundcloud.com/finji-1/sets/turning-project" target="_blank">Listen to “Turning EP” in full length</a></span>
-						<span class="project-link"><a href="#" class="lightboxed" data-featherlight="img/big/turning_cover.jpg">See the image in big</a></span>
-						<span class="project-link"><a href="https://vimeo.com/112520476" target="_blank">Watch a short animation to quitstart.</a></span>
-					</div>
-				</div>
-			</div>
+
 
 			<div class="grid-block size31" style="background-image:url('img/thmbs/star.png');">
 				<div class="hover-overlay">
@@ -248,6 +248,25 @@
 					<div class="grid_block_description"><h1>JUST A LOAH</h1><p>One result from experimeting with some animation styles.</div>
 				</div>
 			</div>
+      <div class="grid-block size21" style="background-image:url('img/thmbs/vr.jpg');">
+        <div class="hover-overlay">
+          <div class="grid_block_description">
+            <h1>THE VIRTUAL REALITY</h1>
+            <p>… a long time ago, we created an immersive world, we're you could move and look around and feel things.</p>
+            <span class="project-link">
+              <section data-featherlight-gallery data-featherlight-filter="a">
+                <a class="gallery-3" href="img/big/vr_02.jpg">Open some pictures</a>
+                <a class="gallery-3" href="img/big/vr_01.jpg"></a>
+                <a class="gallery-3" href="img/big/vr_03.jpg"></a>
+              </section>
+
+            </span>
+            <span class="project-link">
+              <a href='https://vimeo.com/16204033' target='_blank'>A short video about VR</a>
+            </span>
+          </div>
+        </div>
+      </div>
 			<div class="grid-block size22" style="background-image:url('img/thmbs/oneep_cover.jpg');">
 				<div class="hover-overlay">
 					<div class="grid_block_description">
@@ -266,7 +285,7 @@
 			<div class="grid-block size31" style="background-image:url('img/thmbs/lemurvideosnippet.gif');">
 				<div class="hover-overlay">
 					<div class="grid_block_description">
-						<h1>LEMUR, GESTURE MUSIC</h1><p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+						<h1>LEMUR, GESTURE MUSIC</h1><p>Latest technology and lots of interest for a few different topics: Make music with gestures over the internet with your friends everytime.</p>
 						<span class="project-link"><a href="https://vimeo.com/20024104" target="_blank">See the concept video on vimeo</a></span>
 					</div>
 				</div>
@@ -275,7 +294,7 @@
 				<div class="hover-overlay">
 					<div class="grid_block_description">
 						<h1>BOOK COVER</h1>
-						<p>This Image was produced for <i>The New Landscape of Mobile Learning: Redesigning Education in an App-Based World</i>.</p>
+						<p>This Image was produced for “The New Landscape of Mobile Learning: Redesigning Education in an App-Based World”</p>
 						<span class="project-link">
 							<a href="#" class="lightboxed" data-featherlight="img/big/iceberg_print.jpg">See in bigger</a>
 						</span>
