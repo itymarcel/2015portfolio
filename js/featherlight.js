@@ -1,8 +1,8 @@
 /**
  * Featherlight - ultra slim jQuery lightbox
- * Version 1.0.3 - http://noelboss.github.io/featherlight/
+ * Version 1.0.4 - http://noelboss.github.io/featherlight/
  *
- * Copyright 2014, Noël Raoul Bossart (http://www.noelboss.com)
+ * Copyright 2015, Noël Raoul Bossart (http://www.noelboss.com)
  * MIT Licensed.
 **/
 (function($) {
@@ -114,7 +114,7 @@
 				var $target = $(event.target);
 				if( ('background' === self.closeOnClick  && $target.is('.'+self.namespace))
 					|| 'anywhere' === self.closeOnClick
-					|| $target.is(closeButtonSelector) ){
+					|| $target.closest(closeButtonSelector).length ){
 					event.preventDefault();
 					self.close();
 				}
