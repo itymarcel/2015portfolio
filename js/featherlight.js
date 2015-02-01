@@ -224,7 +224,7 @@
 					self.beforeContent(event);
 
 					/* Set content and show */
-					$.when($content).done(function($content){
+					$.when($content).promise().done(function($content){
 						self.setContent($content);
 						self.afterContent(event);
 						/* Call afterOpen after fadeIn is done */
