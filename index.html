@@ -1,270 +1,252 @@
 <!doctype html>
 <html lang="en" class="no-js">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title>Marcel Mueller, work</title>
-  <meta name="description" content="graphic-design thumbnails.">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/featherlight.css" />
-  <link rel="stylesheet" href="css/featherlight.gallery.css" />
-
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script type="text/javascript" src="jquery.mobile.custom.min.js"></script>
-  <script type="text/javascript" src="jquery.nested.js"></script>
-  <script type="text/javascript" src="js/featherlight.js"></script>
-  <script type="text/javascript" src="js/featherlight.gallery.js"></script>
-
-
-  <script type="text/javascript">
-  $(function() {
-
-
-
-  	$('a.lightboxed').featherlight({
-  		openSpeed: 150,
-  		afterOpen: function(event){
-        console.log($('.featherlight-content').height());
-		    $(this.$content[0]).css('max-height', $('.featherlight-content').height());
-		  }
-	  });
-	galleryConfig = {
-		previousIcon: 'prev',
-	    nextIcon: 'next',
-	    galleryFadeIn: 10,
-	    galleryFadeOut: 10,
-	    openSpeed: 150,
-      afterOpen: function(event){
-
-		    $(this.$content[0]).css({
-		    	'max-height': $('.featherlight-content').height()
-		    });
-		}
-	}
-	$('a.gallery-0').featherlightGallery(galleryConfig);
-	$('a.gallery-1').featherlightGallery(galleryConfig);
-	$('a.gallery-2').featherlightGallery(galleryConfig);
-  $('a.gallery-3').featherlightGallery(galleryConfig);
-	  var clickEvent = 'click';
-		function isMobile() {
-			try {
-				if(/Android|webOS|iPhone|iPad|iPod|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent)) {
-					return true;
-				} else {
-					return false;
-				}
-			} catch(e) {
-				console.log("Error in isMobile"); return false;
-			}
-		}
-	  mobile = isMobile();
-	  if(isMobile()) {
-      //Position extra info
-      $('.whoami').addClass('mobile');
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Marcel Mueller – interaction design, graphic, music</title>
+    <meta name="description" content="Freelancer, Interaction Design, Marcel Mueller.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="interactiondesign, interaction, design, interaktion, interaktionsgestaltung, interaktionsgestalter, ig, interaktions, portfolio, marcel, mueller, mueller, hfg gmünd, interactionblog, freelance, freelancer, stuttgart, UX, UI, Design, Grafik, Graphic, 3d, cgi, animation, UX, Interfacem Interface-design, UI-design, Stuttgart, threethink, freiberufler, icons, illustration, app, prototyping, prototyping, software, web-technologies, html5, nodejs, angularjs, bootstrap">
+    <meta name="language" content="english">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Marcel Mueller">
+    <meta name="abstract" content="Portfolio of designer Marcel Mueller">
+    <meta name="copyright" content="Marcel Mueller">
+    <meta name="designer" content="Marcel Mueller">
+    <meta name="publisher" content="Marcel Mueller">
+    <meta name="publisher" content="Marcel Mueller">
+    <meta name="revisit-After" content="7 days">
+    <meta name="distribution" content="global">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/featherlight.css" />
+    <link rel="stylesheet" href="css/featherlight.gallery.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="jquery.mobile.custom.min.js"></script>
+    <script type="text/javascript" src="jquery.nested.js"></script>
+    <script type="text/javascript" src="js/featherlight.js"></script>
+    <script type="text/javascript" src="js/featherlight.gallery.js"></script>
+    <script type="text/javascript">
+    $(function() {
 
 
-		  $('.grid').addClass('mobile');
 
-		  $('.hover-overlay').addClass('invisible');
-		  $('.grid-block').on('touchstart', function(e) {
-			  if (!$(e.target).is('a')) {
-				  $('.hover-overlay').removeClass('invisible');
-				}
-		  }).on('touchend', function(e) {
-			  if (!$(e.target).is('a')) {
-				  $('.hover-overlay').addClass('invisible');
-				}
-		  }).on('tap', function(e) {
-			  if (!$(e.target).is('a')) {
-				  e.preventDefault();
-          if(!$(this).hasClass('touched')) {
-            $('.grid').children('.grid-block').removeClass('touched');
-          }
+        $('a.lightboxed').featherlight({
+            openSpeed: 150,
+            afterOpen: function(event) {
+                console.log($('.featherlight-content').height());
+                $(this.$content[0]).css('max-height', $('.featherlight-content').height());
+            }
+        });
+        galleryConfig = {
+            previousIcon: 'prev',
+            nextIcon: 'next',
+            galleryFadeIn: 10,
+            galleryFadeOut: 10,
+            openSpeed: 150,
+            afterOpen: function(event) {
 
-				  $(this).toggleClass('touched');
-				} else {
-          $(e.target).click();
+                $(this.$content[0]).css({
+                    'max-height': $('.featherlight-content').height()
+                });
+            }
         }
-		  })
+        $('a.gallery-0').featherlightGallery(galleryConfig);
+        $('a.gallery-1').featherlightGallery(galleryConfig);
+        $('a.gallery-2').featherlightGallery(galleryConfig);
+        $('a.gallery-3').featherlightGallery(galleryConfig);
+        var clickEvent = 'click';
 
-		  //info button top right
-		  $('.info-call').on('tap', function(e) {
-        e.preventDefault();
-		  	toggleInfoField($(this));
-		  });
-	  } else {
-	  	  $(".grid").nested({
-			  selector: '.grid-block',
-			  minColumn: 3,
-			  minWidth: 200,
-			  gutter: 3,
-			  resizeToFit: false
-		  });
-		  $('.info-call').on('click', function(e) {
-		  	toggleInfoField($(this));
-		  });
-	  }
-
-	  function toggleInfoField(targetObject) {
-	  		$('.info .text').toggleClass('visible');
-	  		targetObject.toggleClass('open');
-	  }
+        function isMobile() {
+            try {
+                if (/Android|webOS|iPhone|iPad|iPod|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (e) {
+                console.log("Error in isMobile");
+                return false;
+            }
+        }
+        mobile = isMobile();
+        if (isMobile()) {
+            //Position extra info
+            $('.whoami').addClass('mobile');
 
 
+            $('.grid').addClass('mobile');
+
+            $('.hover-overlay').addClass('invisible');
+            $('.grid-block').on('touchstart', function(e) {
+                if (!$(e.target).is('a')) {
+                    $('.hover-overlay').removeClass('invisible');
+                }
+            }).on('touchend', function(e) {
+                if (!$(e.target).is('a')) {
+                    $('.hover-overlay').addClass('invisible');
+                }
+            }).on('tap', function(e) {
+                if (!$(e.target).is('a')) {
+                    e.preventDefault();
+                    if (!$(this).hasClass('touched')) {
+                        $('.grid').children('.grid-block').removeClass('touched');
+                    }
+
+                    $(this).toggleClass('touched');
+                } else {
+                    $(e.target).click();
+                }
+            })
+
+            //info button top right
+            $('.info-call').on('tap', function(e) {
+                e.preventDefault();
+                toggleInfoField($(this));
+            });
+        } else {
+            $(".grid").nested({
+                selector: '.grid-block',
+                minColumn: 3,
+                minWidth: 200,
+                gutter: 3,
+                resizeToFit: false
+            });
+            $('.info-call').on('click', function(e) {
+                toggleInfoField($(this));
+            });
+        }
+
+        function toggleInfoField(targetObject) {
+            $('.info .text').toggleClass('visible');
+            targetObject.toggleClass('open');
+        }
 
 
-	 /* var $container = $('.grid');
-	  // init
-	  $container.packery({
-	    itemSelector: '.grid-block',
-	    gutter: 3
-	  });*/
-  })
 
 
-  </script>
-
+        /* var $container = $('.grid');
+         // init
+         $container.packery({
+           itemSelector: '.grid-block',
+           gutter: 3
+         });*/
+    })
+    </script>
 </head>
+
 <body>
-	<div class="whoami">
-    <div class="info">
-      <div class="info-call">
-        <span>some more information</span>
-        <span>some less information</span>
-      </div>
-      <div class="text">
-        <a href="https://www.linkedin.com/profile/view?id=248182637" target="_blank">Linkedin</a> / <a href="https://www.xing.com/profile/Marcel_Mueller90" target="_blank">Xing</a><br/>
-        Mail: <a href="mailto:marcel@threethink.io">marcel@threethink.io</a><br/>
-        Phone: <a href="call:004915142466625">+49 151 42466625</a><br/><br/>
-
-        „Fotos“: <a href="https://www.flickr.com/photos/finposures/" target="_blank">On Flickr</a><br/>
-        RndmTmb: <a href="http://blaufasan.tumblr.com/" target="_blank">On Tumblr</a><br/><br/>
-
-
-        Also worked for moovel GmbH, car2go GmbH,<br/>Daimler AG, GIRA, GFT AG, TATA Interactive
-        <br/><br/>
-        Copyright Marcel M&uuml;ller, 2015 — <a href="impressum.html" target="_blank">Impressum</a>
-
-      </div>
-    </div>
-		<h1><a href="mailto:marcel@threethink.io">Marcel Mueller, Interaction Designer</a></h1>
-
-		<p>Solving simple and complex problems as well as a passion for designing services and software is why I work in the field of interactiondesign — inter- and antidisciplinary.<br/>I am currently based in Stuttgart, Germany, doing all kinds of design related jobs and things — <a style="color:black;" href="mailto:marcel@threethink.io">waiting for the next challenge.</a></p>
-		<p>The things I create can also be found on different platforms:</p>
-    <a href="http://www.threethink.io/" target="_blank">Me and the guys on a journey.</a><br/>
-		<a href="https://vimeo.com/user2791735" target="_blank">Project videos and self-educating animations.</a><br/>
-		<a href="https://dribbble.com/blaufasan" target="_blank">For the love of graphics and animated gifs.</a><br/>
-		<a href="https://soundcloud.com/finji-1" target="_blank">„Hi there, I'm finji and I produce music.“</a><br/>
-		<a href="http://www.interactionblog.com" target="_blank">The interactionblog by Antonio, Patric and me.</a><br/>
-	</div>
-      <div class="grid" data-layout="12">
-        <div class="grid-block size32" style="background-image:url('img/thmbs/turning_cover.jpg');">
-          <div class="hover-overlay">
-            <div class="grid_block_description">
-              <h1>TURNING EP</h1>
-              <p>This image was created after finishing the EPs second track: “Levitate”. It's supposed to represent the combination of EP name and song name.</p>
-
-              <span class="project-link"><a href="https://soundcloud.com/finji-1/sets/turning-project" target="_blank">Listen to “Turning EP” in full length</a></span>
-              <span class="project-link"><a href="#" class="lightboxed" data-featherlight="img/big/turning_cover.jpg">See the image in big</a></span>
-              <span class="project-link"><a href="https://vimeo.com/112520476" target="_blank">Watch a short animation to quitstart.</a></span>
+    <div class="whoami">
+        <div class="info">
+            <div class="info-call">
+                <span>some more information</span>
+                <span>some less information</span>
             </div>
-          </div>
+            <div class="text">
+                <a href="https://www.linkedin.com/profile/view?id=248182637" target="_blank">Linkedin</a> / <a href="https://www.xing.com/profile/Marcel_Mueller90" target="_blank">Xing</a>
+                <br/> Mail: <a href="mailto:marcel@threethink.io">marcel@threethink.io</a>
+                <br/> Phone: <a href="call:004915142466625">+49 151 42466625</a>
+                <br/> threethink: <a href="http://www.threethink.io" target="_blank">www.threethink.io</a>
+                <br/> Tumblr: <a href="http://itisfinji.tumblr.com/" target="_blank">itisfinji</a>
+                <br/>
+                <br/> Also worked for <a href="http://www.brose.com" target="_blank">Brose Fahrzeugteile GmbH &amp; Co. KG</a>, <a href="https://www.moovel.com/de/DE/company.html" target="_blank">moovel GmbH</a>, <br/><a href="https://www.car2go.com/de/berlin/impressum/" target="_blank">car2go GmbH</a>,
+                <a href="http://www.daimler.com" target="_blank">Daimler AG</a>, <a href="https://www.gira.de/" target="_blank">GIRA</a>, <a href="https://www.gft.com/de/de/index.html" target="_blank">GFT AG</a>, <a href="http://www.topsim.com/de/startseite/startseite.html" target="_blank">TATA Interactive</a>
+                <br/>
+                <br/> Copyright Marcel M&uuml;ller, 2015 — <a href="impressum.html" target="_blank">Impressum</a>
+            </div>
         </div>
+        <h1><a href="mailto:marcel@threethink.io">Marcel Mueller, Interaction Designer</a></h1>
+        <p>Solving simple and complex problems as well as a passion for designing services and software is why I work in the field of interactiondesign.
+            <br/>I am currently based in Stuttgart, Germany, doing all kinds of design related jobs and things as a freelancer. </p><p><a href="mailto:marcel@threethink.io">I am available for hire.</a></p>
+        <p>Things I do can also be found on various platforms:</p>
+        <a href="http://www.threethink.io/" target="_blank" class="black-link">Mathias, Patric and me as a full service team.</a>
+        <br/>
+        <a href="https://vimeo.com/user2791735" target="_blank" class="black-link">Vimeo</a><span class="red"> |</span>
+        <a href="https://dribbble.com/blaufasan" target="_blank" class="black-link">Dribble</a><span class="red"> |</span>
 
-		  	<div class="grid-block size32" style="background-image:url('img/thmbs/fox_present.jpg');">
-	        	<img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
-				<div class="hover-overlay"><div class="grid_block_description"><h1>GUILAB — PROTOTYPR</h1><p>Nowadays its getting more and more important to prototype software and hardware in the early process. This allows us to actually see things we have in mind very fast and therefor can evaluate better. <br/>For that, we created Prototypr—part I of the GUILab Suite. But even prototypr stil is only a prototype.</p><span class="project-link"><a href="https://vimeo.com/61540259" target="_blank">Watch the demo video</a></span></div></div>
-			</div>
-			<div class="grid-block size22" style="background-image:url('img/thmbs/lighthouse.jpg');">
-				<div class="hover-overlay">
-					<div class="grid_block_description">
-						<h1>GUILAB — LIGHTHOUSE</h1><p>Lighthouse is part II of the guilab suite. It's created to connect structure, communication and emotion within projects on one page.</p>
-						<span class="project-link">
-							<a href="http://blaufasan.de/guilab/lighthouse/" target="_blank">Try the Lighthouse prototype</a>
-						</span>
-					</div>
-				</div>
-			</div>
-		  	<div class="grid-block size31" style="background-image:url('img/thmbs/guilab_doku.png');">
-	        	<div class="hover-overlay">
-	        		<div class="grid_block_description">
-	        			<h1>GUILAB — DOCUMENTATION</h1>
-	        			<p>Both, Prototypr and Lighthouse were part of the GUILab Suite. A set of tools, made especially for interaction designers.</p>
-						<span class="project-link">
-							<section data-featherlight-gallery data-featherlight-filter="a">
-								<a class="gallery-0" href="img/big/gld_01.jpg">Four, top-view, documentation pictures.</a>
-								<a class="gallery-0" href="img/big/gld_02.jpg"></a>
-								<a class="gallery-0" href="img/big/gld_03.jpg"></a>
-								<a class="gallery-0" href="img/big/gld_04.jpg"></a>
-							</section>
-						</span>
-					</div>
-				</div>
-			</div>
-		  	<div class="grid-block size32" style="background-image:url('img/thmbs/buttonlab.gif');">
-				<div class="hover-overlay">
-					<div class="grid_block_description">
-						<h1>BUTTON LAB — TOUCHLESS INTERFACE</h1><p>“To drive innovation, never stop exploring new ways and possibilities of interacting with stuff.” — This is the Button Lab. Made for very fast prototyping touchless buttons on displays in specific situations.</p>
-						<span class="project-link">
-							<a href="https://vimeo.com/24512871" target="_blank">Watch the video of the functional prototype on vimeo</a>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="grid-block size32" style="background-image:url('img/thmbs/moving_types_wall.jpg');">
-	        	<div class="hover-overlay">
-	        		<div class="grid_block_description">
-	        			<h1>MOVING TYPES — EXHIBITION</h1>
-	        			<p>“Moving Types” is an interactive, digital exhibition made by students and teachers. It took place on various cities of the world.<br/>Luckily I've been part of the conception for story telling in 3d space and responsible for the iPad App design and promotion video along with a few colleagues.</p>
-						<span class="project-link">
-							<section data-featherlight-gallery data-featherlight-filter="a">
-								<a class="gallery-2" href="img/big/moving_types_00.jpg">See some more exhibition pictures</a>
-								<a class="gallery-2" href="img/big/moving_types_01.jpg"></a>
-								<a class="gallery-2" href="img/big/moving_types_02.jpg"></a>
-								<a class="gallery-2" href="img/big/moving_types_03.jpg"></a>
-								<a class="gallery-2" href="img/big/moving_types_04.jpg"></a>
-								<a class="gallery-2" href="img/big/moving_types_05.jpg"></a>
-							</section>
-						</span>
-						<span class="project-link">
-							<a href='https://vimeo.com/48196802' target='_blank'>The promo video on vimeo</a>
-						</span>
-						<span class="project-link">
-							<a href='http://www.moving-types.de/' target='_blank'>Moving Types Website</a>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="grid-block size21" style="background-image:url('img/thmbs/star.png');">
-				<div class="hover-overlay">
-					<div class="grid_block_description">
-						<h1>STARS — TRACK COVER</h1>
-						<p>Images for a series of tracks, as part of the concept that each song represents his own planet.</p>
-						<span class="project-link">
-							<section data-featherlight-gallery data-featherlight-filter="a">
-								<a href="#" class="gallery-1" data-featherlight="img/big/star.png">See three planets</a>
-								<a href="#" class="gallery-1" data-featherlight="img/big/psyphere_posted.png"></a>
-								<a href="#" class="gallery-1" data-featherlight="img/big/sun_posted.png"></a>
-							</section>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="grid-block size21" style="background-image:url('img/thmbs/metaloader.gif');">
-				<div class="hover-overlay">
-					<div class="grid_block_description"><h1>JUST A LOAH</h1><p>One result from experimeting with some animation styles.</div>
-				</div>
-			</div>
-      <div class="grid-block size32" style="background-image:url('img/thmbs/virtual_01.jpg');">
-        <div class="hover-overlay">
-          <div class="grid_block_description">
-            <h1>THE VIRTUAL REALITY</h1>
-            <p>… a long time ago, we created an immersive world, we're you could move and look around and feel things.</p>
-            <span class="project-link">
+        <a href="https://soundcloud.com/finji-1" target="_blank" class="black-link">Soundcloud</a><span class="red"> |</span>
+
+        <a href="http://www.interactionblog.com" target="_blank" class="black-link">Interactionblog</a>
+
+    </div>
+    <div class="grid" data-layout="12">
+        <div class="grid-block size32" style="background-image:url('img/thmbs/buttonlab.gif');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>BUTTON LAB — TOUCHLESS UI</h1>
+                    <p>“To drive innovation, never stop exploring new ways and possibilities of interacting with stuff.” — This is the Button Lab. Made for very fast prototyping touchless buttons on displays in specific situations.</p>
+                    <span class="project-link">
+                      <a href="https://vimeo.com/24512871" target="_blank">Watch the video of the functional prototype on vimeo</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="grid-block size32" style="background-image:url('img/thmbs/brose.jpg');">
+            <img src="img/thmbs/brose.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>BROSE — IAA INNOVATION STUDY</h1>
+                    <p>In 2015 we worked together with Brose to create an animated movie to present the latest Brose engineering innovations. This innovations were built into one vehicle, designed by Julius Schlecht. After placing this vehicle into a lab-like scenery and creating a storyboard to fly over every innovative Brose part, we produced a 2 minute animation, which was shown at IAA 2015.</p><span class="project-link"><a href="http://www.brose.com/de/IAA-2015/" target="_blank">More information on the Brose website.</a></span></div>
+            </div>
+        </div>
+        <div class="grid-block size31" style="background-image:url('img/thmbs/car2go_black.jpg');">
+            <img src="img/thmbs/car2go_black.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>CAR2GO BLACK</h1>
+                    <p>Service and App concept, as well as user interface design for car2go black.</p><span class="project-link"><a href="https://www.car2goblack.com/de/DE/" target="_blank">Visit the car2go black website</a></span></div>
+            </div>
+        </div>
+        <div class="grid-block size32" style="background-image:url('img/thmbs/fox_present.jpg');">
+            <img src="img/thmbs/fox_present.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>GUILAB — PROTOTYPR</h1>
+                    <p>Nowadays its getting more and more important to prototype software and hardware in the early process. This allows us to actually see things we have in mind very fast and therefor can evaluate better.
+                        <br/>For that, we created Prototypr—part I of the GUILab Suite. But even prototypr stil is only a prototype.</p><span class="project-link"><a href="https://vimeo.com/61540259" target="_blank">Watch the demo video</a></span></div>
+            </div>
+        </div>
+        <div class="grid-block size31" style="background-image:url('img/thmbs/lighthouse.jpg');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>GUILAB — LIGHTHOUSE</h1>
+                    <p>Lighthouse is part II of the guilab suite. It's created to connect structure, communication and emotion within projects on one page.</p>
+                    <span class="project-link">
+            <a href="http://blaufasan.de/guilab/lighthouse/" target="_blank">Try the Lighthouse prototype</a>
+          </span>
+                </div>
+            </div>
+        </div>
+        <div class="grid-block size31" style="background-image:url('img/thmbs/guilab_doku.png');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>GUILAB — DOCUMENTATION</h1>
+                    <p>Both, Prototypr and Lighthouse were part of the GUILab Suite. A set of tools, made especially for interaction designers.</p>
+                    <span class="project-link">
+            <section data-featherlight-gallery data-featherlight-filter="a">
+              <a class="gallery-0" href="img/big/gld_01.jpg">Four, top-view, documentation pictures.</a>
+              <a class="gallery-0" href="img/big/gld_02.jpg"></a>
+              <a class="gallery-0" href="img/big/gld_03.jpg"></a>
+              <a class="gallery-0" href="img/big/gld_04.jpg"></a>
+            </section>
+          </span>
+                </div>
+            </div>
+        </div>
+        <div class="grid-block size32" style="background-image:url('img/thmbs/moovel.jpg');">
+            <img src="img/thmbs/moovel.jpg" data-highres="img/demo/nyc1-highres.jpg"></img>
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>MOOVEL</h1>
+                    <p>Service development, conception and user interface design for mobile and desktop for the moovel app. A simple service to give users an easy way to navigate from A to B with all kinds of different transportation types connected into fluid routes.</p><span class="project-link"><a href="https://www.moovel.com" target="_blank">Visit the moovel website.</a></span></div>
+            </div>
+        </div>
+        <div class="grid-block size32" style="background-image:url('img/thmbs/virtual_01.jpg');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>THE VIRTUAL REALITY</h1>
+                    <p>… a long time ago, we created an immersive world, we're you could move and look around and feel things.</p>
+                    <span class="project-link">
               <section data-featherlight-gallery data-featherlight-filter="a">
                 <a class="gallery-3" href="img/big/virtual_03.jpg">Open some pictures</a>
                 <a class="gallery-3" href="img/big/virtual_02.jpg"></a>
@@ -274,50 +256,109 @@
               </section>
 
             </span>
-            <span class="project-link">
+                    <span class="project-link">
               <a href='https://vimeo.com/16204033' target='_blank'>A short video about VR</a>
             </span>
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
-			<div class="grid-block size22" style="background-image:url('img/thmbs/oneep_cover.jpg');">
-				<div class="hover-overlay">
-					<div class="grid_block_description">
-						<h1>ONE EP</h1>
-						<p>ONE EP was the first real, organized track collection I've uploaded to the internet.</p>
-						<span class="project-link">
-							<a href="https://soundcloud.com/finji-1/sets/one-ep" target="_blank">Listen to the album on soundcloud</a>
-						</span>
-						<span class="project-link">
-							<a href="#" class="lightboxed" data-featherlight="img/big/oneep_cover.jpg">The cover in big</a>
-						</span>
-					</div>
-				</div>
-			</div>
+        <div class="grid-block size31" style="background-image:url('img/thmbs/turning_cover.jpg');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>TURNING EP</h1>
+                    <p>This image was created after finishing the EPs second track: “Levitate”. It's supposed to represent the combination of EP name and song name.</p>
+                    <span class="project-link"><a href="https://soundcloud.com/finji-1/sets/turning-project" target="_blank">Listen to “Turning EP” in full length</a></span>
+                    <span class="project-link"><a href="#" class="lightboxed" data-featherlight="img/big/turning_cover.jpg">See the image in big</a></span>
+                    <span class="project-link"><a href="https://vimeo.com/112520476" target="_blank">Watch a short animation to quitstart.</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="grid-block size32" style="background-image:url('img/thmbs/moving_types_wall.jpg');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>MOVING TYPES — EXHIBITION</h1>
+                    <p>“Moving Types” is an interactive, digital exhibition made by students and teachers. It took place on various cities of the world.
+                        <br/>Luckily I've been part of the conception for story telling in 3d space and responsible for the iPad App design and promotion video along with a few colleagues.</p>
+                    <span class="project-link">
+            <section data-featherlight-gallery data-featherlight-filter="a">
+              <a class="gallery-2" href="img/big/moving_types_00.jpg">See some more exhibition pictures</a>
+              <a class="gallery-2" href="img/big/moving_types_01.jpg"></a>
+              <a class="gallery-2" href="img/big/moving_types_02.jpg"></a>
+              <a class="gallery-2" href="img/big/moving_types_03.jpg"></a>
+              <a class="gallery-2" href="img/big/moving_types_04.jpg"></a>
+              <a class="gallery-2" href="img/big/moving_types_05.jpg"></a>
+            </section>
+          </span>
+                    <span class="project-link">
+            <a href='https://vimeo.com/48196802' target='_blank'>The promo video on vimeo</a>
+          </span>
+                    <span class="project-link">
+            <a href='http://www.moving-types.de/' target='_blank'>Moving Types Website</a>
+          </span>
+                </div>
+            </div>
+        </div>
+        <div class="grid-block size21" style="background-image:url('img/thmbs/star.png');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>STARS — TRACK COVER</h1>
+                    <p>Images for a series of tracks, as part of the concept that each song represents his own planet.</p>
+                    <span class="project-link">
+            <section data-featherlight-gallery data-featherlight-filter="a">
+              <a href="#" class="gallery-1" data-featherlight="img/big/star.png">See three planets</a>
+              <a href="#" class="gallery-1" data-featherlight="img/big/psyphere_posted.png"></a>
+              <a href="#" class="gallery-1" data-featherlight="img/big/sun_posted.png"></a>
+            </section>
+          </span>
+                </div>
+            </div>
+        </div>
+        <div class="grid-block size21" style="background-image:url('img/thmbs/metaloader.gif');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>JUST A LOADER</h1>
+                    <p>One result from experimeting with some animation styles.</div>
+            </div>
+        </div>
 
-			<div class="grid-block size31" style="background-image:url('img/thmbs/lemurvideosnippet.gif');">
-				<div class="hover-overlay">
-					<div class="grid_block_description">
-						<h1>LEMUR, GESTURE MUSIC</h1><p>Latest technology and lots of interest for a few different topics: Make music with gestures over the internet with your friends everytime.</p>
-						<span class="project-link"><a href="https://vimeo.com/20024104" target="_blank">See the concept video on vimeo</a></span>
-					</div>
-				</div>
-			</div>
-			<div class="grid-block size21" style="background-image:url('img/thmbs/ice_book-cover.jpg');">
-				<div class="hover-overlay">
-					<div class="grid_block_description">
-						<h1>BOOK COVER</h1>
-						<p>This Image was produced for “The New Landscape of Mobile Learning: Redesigning Education in an App-Based World”</p>
-						<span class="project-link">
-							<a href="#" class="lightboxed" data-featherlight="img/big/iceberg_print.jpg">See in bigger</a>
-						</span>
-						<span class="project-link">
-							<a href="http://www.amazon.com/New-Landscape-Mobile-Learning-Redesigning-ebook/dp/B00IMYW5LI/ref=sr_1_1?ie=UTF8&qid=1421324283&sr=8-1&keywords=mobile+learning+landscape" target="_blank">Order the book by Charles Miller on Amazon.com</a>
-						</span>
-					</div>
-				</div>
-			</div>
-      </div>
-
+        <div class="grid-block size22" style="background-image:url('img/thmbs/oneep_cover.jpg');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>ONE EP</h1>
+                    <p>ONE EP was the first real, organized track collection I've uploaded to the internet.</p>
+                    <span class="project-link">
+            <a href="https://soundcloud.com/finji-1/sets/one-ep" target="_blank">Listen to the album on soundcloud</a>
+          </span>
+                    <span class="project-link">
+            <a href="#" class="lightboxed" data-featherlight="img/big/oneep_cover.jpg">The cover in big</a>
+          </span>
+                </div>
+            </div>
+        </div>
+        <div class="grid-block size31" style="background-image:url('img/thmbs/lemurvideosnippet.gif');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>LEMUR, GESTURE MUSIC</h1>
+                    <p>Latest technology and lots of interest for a few different topics: Make music with gestures over the internet with your friends everytime.</p>
+                    <span class="project-link"><a href="https://vimeo.com/20024104" target="_blank">See the concept video on vimeo</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="grid-block size21" style="background-image:url('img/thmbs/ice_book-cover.jpg');">
+            <div class="hover-overlay">
+                <div class="grid_block_description">
+                    <h1>BOOK COVER</h1>
+                    <p>This Image was produced for “The New Landscape of Mobile Learning: Redesigning Education in an App-Based World”</p>
+                    <span class="project-link">
+            <a href="#" class="lightboxed" data-featherlight="img/big/iceberg_print.jpg">See in bigger</a>
+          </span>
+                    <span class="project-link">
+            <a href="http://www.amazon.com/New-Landscape-Mobile-Learning-Redesigning-ebook/dp/B00IMYW5LI/ref=sr_1_1?ie=UTF8&qid=1421324283&sr=8-1&keywords=mobile+learning+landscape" target="_blank">Order the book by Charles Miller on Amazon.com</a>
+          </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

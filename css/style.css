@@ -126,7 +126,9 @@ h1 {
 		position:absolute;
 		top:1.8em;
 		right:0.8em;
+		padding-left:10px;
 		font-size:11px;
+		background:#f9f9f9;
 	}
 		.whoami .info .info-call {
 			text-decoration:underline;
@@ -164,6 +166,9 @@ h1 {
 	color:rgba(255, 105, 100, 1);
 	text-decoration:underline;
 	margin-bottom:3px;
+}
+.whoami span.red {
+	color:rgba(255, 105, 100, 1);
 }
 .whoami h1 a {
 	color:black;
