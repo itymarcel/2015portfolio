@@ -229,3 +229,8 @@ h1 {
 		.grid .grid-block:hover .hover-overlay {
 		}
 }
+
+#impressum {
+	padding:50px;
+	max-width:600px;
+}
