@@ -167,6 +167,12 @@ h1 {
 	text-decoration:underline;
 	margin-bottom:3px;
 }
+.whoami a.black {
+	color:black;
+	line-height:inherit;
+	margin:0;
+	padding:0;
+}
 .whoami span.red {
 	color:rgba(255, 105, 100, 1);
 }
